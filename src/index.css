@@ -6,49 +6,59 @@
 
 @layer base {
   :root {
-    /* Bio Link Color Palette */
-    --background: 60 56% 91%; /* Beige #F5F5DC */
-    --foreground: 30 25% 20%; /* Dark brown text */
+    /* Modern Bio Link Design System - Human Development Focused */
+    
+    /* CUSTOMIZABLE BACKGROUND - Change these values for background customization */
+    --app-background: linear-gradient(135deg, #fdfbf7 0%, #ebf4f6 100%); /* Gradient background - replace with image url() if needed */
+    --app-background-solid: 45 50% 96%; /* Fallback solid color */
+    
+    /* Core Brand Colors - Warm & Professional */
+    --background: 45 50% 96%; /* Warm off-white */
+    --foreground: 25 25% 15%; /* Deep warm brown */
 
-    --card: 45 67% 88%; /* Soft beige card */
-    --card-foreground: 30 25% 20%;
+    --card: 0 0% 100%; /* Pure white cards */
+    --card-foreground: 25 25% 15%;
 
-    --popover: 60 56% 91%;
-    --popover-foreground: 30 25% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 25% 15%;
 
-    --primary: 30 45% 55%; /* Soft brown #D2B48C */
-    --primary-foreground: 60 56% 96%;
+    --primary: 25 65% 45%; /* Rich warm brown - main brand */
+    --primary-foreground: 45 50% 98%;
 
-    --secondary: 197 71% 73%; /* Sky blue #87CEEB */
-    --secondary-foreground: 30 25% 20%;
+    --secondary: 200 85% 65%; /* Calming blue */
+    --secondary-foreground: 25 25% 15%;
 
-    --muted: 45 67% 85%;
-    --muted-foreground: 30 15% 45%;
+    --muted: 45 30% 90%;
+    --muted-foreground: 25 15% 55%;
 
-    --accent: 197 71% 73%; /* Sky blue accent */
-    --accent-foreground: 30 25% 20%;
+    --accent: 35 85% 65%; /* Warm gold accent */
+    --accent-foreground: 25 25% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 45 35% 78%;
-    --input: 45 35% 82%;
-    --ring: 30 45% 55%;
+    --border: 45 25% 85%;
+    --input: 45 25% 90%;
+    --ring: 25 65% 45%;
 
-    /* Bio Link specific tokens */
-    --banner-bg: 60 56% 94%;
-    --banner-hover: 60 56% 89%;
+    /* Enhanced Design Tokens */
+    --banner-bg: 0 0% 100%;
+    --banner-hover: 45 50% 98%;
     --profile-bg: 0 0% 100%;
-    --shadow-soft: 30 25% 20% / 0.1;
-    --shadow-banner: 30 25% 20% / 0.15;
+    --shadow-soft: 25 25% 15% / 0.08;
+    --shadow-banner: 25 65% 45% / 0.15;
+    --shadow-glow: 25 65% 45% / 0.25;
 
-    /* Gradients */
+    /* Beautiful Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
     --gradient-banner: linear-gradient(145deg, hsl(var(--banner-bg)), hsl(var(--card)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(35 85% 75%) 0%, hsl(25 65% 55%) 100%);
 
-    /* Animations */
-    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-banner: transform 0.2s ease-out;
+    /* Smooth Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-banner: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-glow: box-shadow 0.3s ease;
 
     --radius: 0.5rem;
 
@@ -114,6 +124,14 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: var(--app-background);
+    min-height: 100vh;
+  }
+
+  /* Custom background utility for easy image replacement */
+  .app-bg-custom {
+    background: var(--app-background);
+    /* To use image: replace --app-background value with: url('your-image.jpg') center/cover no-repeat */
   }
 }
